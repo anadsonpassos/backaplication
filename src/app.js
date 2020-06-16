@@ -5,14 +5,14 @@ const cors = require('cors');
 const { errors } = require('celebrate');
 const routes = require('./routes');
 
-const { Client } = require('pg');
+// const { Client } = require('pg');
 
-client = new Client({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_DATABASE,
-});
+// client = new Client({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASS,
+//     database: process.env.DB_DATABASE,
+// });
 
 const app = express();
 
