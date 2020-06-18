@@ -18,7 +18,7 @@ describe('CLIENTE', () => {
         .send({
             name: "Anadson Passos",
             email: "anadsonpassos@gmail.com",
-            whatsapp: "11952035844",
+            whatsapp: "11000000000",
             city: "São Paulo",
             uf: "SP"
         });

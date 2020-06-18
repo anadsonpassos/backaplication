@@ -10,7 +10,7 @@ module.exports = {
         .first();
 
         if (!cliente) {
-            return response.status(400).json({ error: 'No Cliente found with this ID' });
+            return response.status(400).json({ error: 'No cliente found with this ID' });
         }
 
         return response.json(cliente);

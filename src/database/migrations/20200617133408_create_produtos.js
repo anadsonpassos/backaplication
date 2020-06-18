@@ -6,9 +6,9 @@ exports.up = function(knex) {
          table.string('description').notNullable();
          table.decimal('value').notNullable();
  
-         table.string('cliente_id').notNullable();
+         table.string('clienteId').notNullable();
  
-         table.foreign('cliente_id').references('id').inTable('clientes');
+         table.foreign('clienteId').references('id').inTable('clientes');
        });
  };
  

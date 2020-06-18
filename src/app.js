@@ -22,7 +22,22 @@ app.use(express.urlencoded( { extended: true }));
 app.use(routes);
 app.use(errors());
 
-// app.use((req, res, next) => {
+// app.use(cors({
+//         origin: 'http://localhost:3000'
+//     }));
+
+app.use((request, response, next) => {
+    const error = new Error('Not found')
+    error.status = 404
+    next(error)
+});
+
+app.use((error, request, response, next) => {
+    response.status(error.status || 500)
+    response.json({ error: error.message })
+});
+
+// app.use((error, request, response, next) => {
 //     allowedOrigins = ['http: // localhost: 3000', 'http://localhost:3001', 'https://agiltech.herokuapp.com'];
 //     res.header('Access-Control-Allow-Origin', '*');
 //     res.header(

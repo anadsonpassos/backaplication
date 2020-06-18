@@ -12,6 +12,8 @@ routes.post('/sessions', SessionController.create);
 
 routes.get('/clientes', ClienteController.index);
 
+routes.post('/produtos', ProdutoController.create);
+
 routes.post('/clientes', celebrate({
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().required(),
@@ -39,10 +41,8 @@ routes.post('/produtos', celebrate({
         title: Joi.string().required(),
         description: Joi.string().required(),
         value: Joi.number().required(),
-    })
+    }).unknown(),
 }), ProdutoController.create);
-
-routes.post('/produtos', ProdutoController.create);
 
 routes.delete('/produtos/:id', celebrate({
     [Segments.PARAMS]: Joi.object().keys({
