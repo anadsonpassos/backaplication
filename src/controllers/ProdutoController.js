@@ -34,7 +34,7 @@ module.exports = {
             const { title, description, value } = request.body;
             const clienteId = request.headers.authorization;
         
-            const [id] = await connection('produtos').insert({
+            const {id} = await connection('produtos').insert({
                 title,
                 description,
                 value,
