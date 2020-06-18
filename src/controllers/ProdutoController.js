@@ -42,8 +42,9 @@ module.exports = {
             })
             return response.status(201).send();
             } catch (error) {
+                console.log(error)
                 next(error)
-            }
+        }
     },
 
     async delete(request, response) {
